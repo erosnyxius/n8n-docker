@@ -1,0 +1,19 @@
+# Use the official n8n task runners image
+FROM n8nio/runners:latest
+
+USER root
+
+# Install Python Libraries
+RUN cd /opt/runners/task-runner-python \
+    && uv pip install numpy pandas requests beautifulsoup4
+
+# Install JavaScript Libraries
+RUN cd /opt/runners/task-runner-javascript \
+    && pnpm add moment lodash uuid axios
+
+# Create config directory and copy configuration
+RUN mkdir -p /etc/task-runners
+COPY n8n-task-runners.json /etc/task-runners/config.json
+
+# Switch back to the standard user
+USER runner
