@@ -6,7 +6,7 @@ A complete, robust, and scalable Docker deployment for **n8n**. This stack inclu
 
 ## Features
 
-* **⚡ n8n with External Task Runners:** Runs Python and JS code in isolated worker containers (preventing the main n8n process from crashing during heavy tasks).
+* **n8n with External Task Runners:** Runs Python and JS code in isolated worker containers (preventing the main n8n process from crashing during heavy tasks).
 * **PostgreSQL 16:** Robust database backend instead of SQLite.
 * **Caddy Server:** Automatic HTTPS/SSL management and reverse proxy.
 * **Automated Backups:**
@@ -15,7 +15,7 @@ A complete, robust, and scalable Docker deployment for **n8n**. This stack inclu
 
 
 * **🛠 Pre-loaded Libraries:** The task runners come pre-installed with popular data science and utility libraries (Pandas, NumPy, Lodash, Axios, etc.).
-* **🔧 Interactive Setup:** Includes a `setup.sh` script to configure the environment automatically.
+* **Interactive Setup:** Includes a `setup.sh` script to configure the environment automatically.
 
 ---
 
