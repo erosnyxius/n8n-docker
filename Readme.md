@@ -14,7 +14,7 @@ A complete, robust, and scalable Docker deployment for **n8n**. This stack inclu
 * **Offsite (Optional):** Automatic syncing of backups to any S3-compatible storage (AWS S3, Cloudflare R2, MinIO, DigitalOcean Spaces) using Rclone.
 
 
-* **🛠 Pre-loaded Libraries:** The task runners come pre-installed with popular data science and utility libraries (Pandas, NumPy, Lodash, Axios, etc.).
+* **Pre-loaded Libraries:** The task runners come pre-installed with popular data science and utility libraries (Pandas, NumPy, Lodash, Axios, etc.).
 * **Interactive Setup:** Includes a `setup.sh` script to configure the environment automatically.
 
 ---
