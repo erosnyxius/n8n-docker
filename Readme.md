@@ -1,5 +1,3 @@
-# n8n Production-Ready Setup 
-
 ![n8n-prod](/n8n-prod.PNG)
 
 A complete, robust, and scalable Docker deployment for **n8n**. This stack includes PostgreSQL, Caddy (Reverse Proxy/SSL), automated local & S3 backups, and **External Task Runners** for high-performance Python and JavaScript execution.
