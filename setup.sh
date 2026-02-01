@@ -7,9 +7,9 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-echo -e "${BLUE}=========================================${NC}"
-echo -e "${BLUE}   n8n Diamond Setup (Task Runners)      ${NC}"
-echo -e "${BLUE}=========================================${NC}"
+echo -e "${BLUE}==============================${NC}"
+echo -e "${BLUE}   n8n Self Hosted Setup      ${NC}"
+echo -e "${BLUE}==============================${NC}"
 
 # --- PRE-FLIGHT CHECKS ---
 if ! command -v docker &> /dev/null; then
@@ -32,7 +32,7 @@ read -p "Select (L/P): " env_choice
 # --- 2. CONFIGURATION ---
 echo -e "\n${GREEN}2. Configuration:${NC}"
 
-# NEW: Container Name
+# Container Name
 read -p "Container Name (default: n8n-main): " CONTAINER_NAME
 CONTAINER_NAME=${CONTAINER_NAME:-n8n-main}
 
