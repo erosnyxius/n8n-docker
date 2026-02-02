@@ -73,16 +73,19 @@ if [[ $env_choice =~ ^[Pp]$ ]]; then
     WEBHOOK_URL="https://${DOMAIN_NAME}/"
     N8N_SECURE_COOKIE=true
 
-    # S3 Setup
-    echo -e "\n${YELLOW}--- Offsite Backup (S3) ---${NC}"
-    read -p "Enable S3 Backups? (y/n): " s3_ask
+    # S3 Setup (Filebase - 5GB Free)
+    echo -e "\n${YELLOW}--- Offsite Backup (Filebase S3) ---${NC}"
+    echo "   Filebase: Free 5GB S3-compatible storage"
+    echo "   Sign up: https://filebase.com"
+    read -p "Enable Filebase Backups? (y/n): " s3_ask
     if [[ $s3_ask == "y" ]]; then
         S3_ENABLED="true"
         read -p "Bucket Name: " S3_BUCKET
-        read -p "Region (e.g. us-east-1): " S3_REGION
+        S3_REGION="us-east-1"
         read -p "Access Key ID: " S3_ACCESS_KEY_ID
         read -p "Secret Access Key: " S3_SECRET_ACCESS_KEY
-        read -p "Endpoint (Optional): " S3_ENDPOINT
+        S3_ENDPOINT="https://s3.filebase.com"
+        echo "✔ Filebase configured (Region: us-east-1, Endpoint: s3.filebase.com)"
     fi
 else
     # === LOCAL ===
@@ -129,4 +132,8 @@ S3_ENDPOINT=${S3_ENDPOINT}
 EOT
 
 echo -e "\n${GREEN}✔ Setup Complete!${NC}"
-echo -e "Run: ${BLUE}docker compose up -d --build${NC}"
+if [[ "$S3_ENABLED" == "true" ]]; then
+    echo -e "Run: ${BLUE}docker compose --profile filebase up -d --build${NC}"
+else
+    echo -e "Run: ${BLUE}docker compose up -d --build${NC}"
+fi
